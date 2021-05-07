@@ -1,0 +1,59 @@
+#div-1 {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+#heading-div {
+}
+
+#div-center {
+  margin-top: 39px;
+}
+
+#div-center {
+  float: right;
+}
+
+#first-div {
+  float: left;
+  width: 33%;
+}
+
+#guide_image {
+}
+
+#my_camera {
+  height: 240px;
+  width: 320px;
+  margin: auto;
+}
+
+#second-div {
+  display: inline-block;
+  width: 40%;
+  height: 50%;
+  float: right;
+}
+
+#third-div {
+  display: inline-block;
+  width: 40%;
+  height: 50%;
+}
+
+#bottom-div {
+  height: 320px;
+  width: 320px;
+}
+
+.tick {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: auto;
+}
+
+#tickrow {
+  margin-top: 4%;
+}
+

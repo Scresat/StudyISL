@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="/static/assets22/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets22/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/assets22/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/static/assets22/css/styles.css">
+    <link rel="shortcut icon" type="image/jpg" href="{{ url_for('static', filename="images/favicon.png") }}"/>
+    <meta name="description" content="Learn Indian Sign Language online with Artificial Intelligence!">
+    <meta name="og:description" content="Learn Indian Sign Language online with Artificial Intelligence!">
+    <meta name="image" content="{{ url_for('static', filename="images/favicon.png") }}">
+    <meta name="og:image" content="{{ url_for('static', filename="images/favicon.png") }}">
+    {% block stylesheets %} {% endblock %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG0QE0WQX5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZG0QE0WQX5');
+</script>
+</head>
+
+<body style="background: rgb(232,236,241);">
+<nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean">
+    <div class="container"><a class="navbar-brand text-white" href="{{ url_for('homepage') }}">StudyISL Online</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" href="{{ url_for('homepage') }}">Learn</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#">Quiz</a></li> -->
+                <li class="nav-item"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<script src="/static/assets22/js/jquery.min.js"></script>
+<script src="/static/assets22/bootstrap/js/bootstrap.min.js"></script>
+
+{% block js %}
+{% endblock %}
+</body>
+</html>

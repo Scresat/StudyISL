@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} Learn ISL! {% endblock %}
+{% block stylesheets %}
+<meta name="title" content="Learn ISL!">
+<meta name="og:title" content="Learn ISL!">
+<link rel="stylesheet" href="{{ url_for("static", filename="css/cards.css") }}">
+{% endblock %}
+{% block content %}
+
+    <h1 id="main-heading">Learn Indian Sign Language with <span id="aispan">Artificial Intelligence!</span></h1>
+    <div class="container">
+    {% for symbol in learnList %}
+        <a href="{{ url_for('learn', symbol=symbol)  }}">
+            <div class="card card-1"><h1 class="card-text">{{ symbol }}</h1></div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}
