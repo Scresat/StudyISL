@@ -51,19 +51,14 @@
 </div>
 <div style="height: 14%;width: 100%;position: fixed;bottom: 0;margin-left: 20px;margin-right: 20px;">
     <div style="width: 20%;display: inline-block;">
-        <form action="{{ url_for('learn', symbol=previous) }}">
-                {% if previous == '0' %}
-                    <button class="btn btn-dark" id="btn_prev" type="submit"
-                style="margin-left: 39px;float: left;margin-top: 20px;width: 120px;" disabled="true"><i class="fa fa-arrow-left"></i>&nbsp;
-            &nbsp;Previous
+        <a href="{{ url_for('learn', symbol=previous) }}">
+            <button class="btn btn-dark" id="btn_prev" type="submit"
+        style="margin-left: 39px;float: left;margin-top: 20px;width: 120px;"><i class="fa fa-arrow-left"></i>&nbsp;
+    &nbsp;Previous
         </button>
-                {% else %}
-                    <button class="btn btn-dark" id="btn_prev" type="submit"
-                style="margin-left: 39px;float: left;margin-top: 20px;width: 120px;"><i class="fa fa-arrow-left"></i>&nbsp;
-            &nbsp;Previous
-        </button>
-                {% endif %}
-            </form>
+        </a>
+
+
 
     </div>
     <div style="width: 58%;display: inline-block;">
@@ -71,27 +66,19 @@
 
     </div>
     <div style="width: 20%;display: inline-block;">
-        <form action="{{ url_for('learn', symbol=next) }}">
-                {% if next == '10' %}
-                    <a href="">
-                        <button class="btn btn-dark" id="next_btn" type="submit"
-                style="margin-right: 39px;float: right;margin-top: 20px;width: 120px;" disabled="true">Next&nbsp; &nbsp; &nbsp;<i
-                class="fa fa-arrow-right"></i></button>
-                    </a>
-                {% else %}
-                    <button class="btn btn-dark" id="next_btn" type="submit"
-                style="margin-right: 39px;float: right;margin-top: 20px;width: 120px;">Next&nbsp; &nbsp; &nbsp;<i
-                class="fa fa-arrow-right"></i></button>
-                {% endif %}
-            </form>
+
+
+            <a href="{{ url_for('learn', symbol=next) }}">
+                <button class="btn btn-dark" id="next_btn" type="submit"
+        style="margin-right: 39px;float: right;margin-top: 20px;width: 120px;" >Next&nbsp; &nbsp; &nbsp;<i
+        class="fa fa-arrow-right"></i></button>
+            </a>
+
+
 
     </div>
 </div>
 {% endblock %}
-
-
-
-
 
 {% block js %}
     <script src="/static/jslib/webcam.js"></script>

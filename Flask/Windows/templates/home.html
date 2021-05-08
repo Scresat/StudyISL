@@ -9,6 +9,7 @@
 
     <h1 id="main-heading">Learn Indian Sign Language with <span id="aispan">Artificial Intelligence!</span></h1>
     <div class="container">
+   <!-- create a different card for each sign using a for loop -->
     {% for symbol in learnList %}
         <a href="{{ url_for('learn', symbol=symbol)  }}">
             <div class="card card-1"><h1 class="card-text">{{ symbol }}</h1></div>

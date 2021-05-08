@@ -12,17 +12,17 @@ lUI = LearnUI()
 homePage = Home()
 
 
-@app.route('/')
+@app.route('/')  # route for homepage
 def homepage():
     return homePage.homepage()
 
 
-@app.route('/learn/<symbol>')
+@app.route('/learn/<symbol>')  # route for learn page
 def learn(symbol):
     return lUI.learn(symbol)
 
 
-@app.route('/detect', methods=["POST"])
+@app.route('/detect', methods=["POST"])  # route for sign detection API that return the sign detected
 def detection():
     return lComm.detection()
 
