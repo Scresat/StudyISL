@@ -22,10 +22,10 @@ input_detailsRight = interpreterRight.get_input_details()
 output_detailsRight = interpreterRight.get_output_details()
 
 # Model output to actual result converter dictionary
-left_result_dict = {'0': 'A', '1':'B', '2': 'C', '3': 'D', '4': "F", '5': "G", '6': "J", '7': "N", '8': "Q", '9': "R", '10': 'S', '11': 'X'}
+left_result_dict = {'0': 'A', '1':'B', '2': 'C', '3': 'D', '4': "F", '5': "G", '6': "J", '7': "N", '8': "Q", '9': "R", '10': 'S', '11': 'X', '12': "W", '13': 'Z'}
 
 # Model output to actual result converter dictionary
-right_result_dict = {'0': 'A','1': 'B','2': 'C','3': 'E','4': "F",'5': "G", '6': "I",'7': "J",'8': "K",'9': "L",'10': 'N','11': 'P','12': 'S','13': "U", '14': '0','15': '1','16': '2','17': '3','18': '4','19': '5','20': '6','21': '7', '22': '8','23': '9', '24': 'V' }
+right_result_dict = {'0': 'A','1': 'B','2': 'C','3': 'E','4': "F",'5': "G", '6': "I",'7': "J",'8': "K",'9': "L",'10': 'N','11': 'P','12': 'S','13': "U", '14': '0','15': '1','16': '2','17': '3','18': '4','19': '5','20': '6','21': '7', '22': '8','23': '9','24': 'V', '25': 'W', '26': 'Z'}
 
 # Initializing the MediaPipe hand tracking model
 mp_drawing = mp.solutions.drawing_utils
@@ -112,7 +112,7 @@ class Classifier:
             print(whichhand)
 
         # Initializing a list that contains the signs that needs both hands
-        non_one_hand = ["A", "B", "D", "E", "F", "G", "J", "K", "N", "P", 'Q', 'R', 'S', 'T', 'X']
+        non_one_hand = ["A", "B", "D", "E", "F", "G", "J", "K", "N", "P", 'Q', 'R', 'S', 'T', 'W', 'X', 'Z']
 
         # if only one hand is detected
         if len(predictions_result) == 1:
