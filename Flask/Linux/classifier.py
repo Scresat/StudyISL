@@ -25,7 +25,7 @@ output_detailsRight = interpreterRight.get_output_details()
 left_result_dict = {'0': 'A', '1':'B', '2': 'C', '3': 'D', '4': "F", '5': "G", '6': "J", '7': "N", '8': "Q", '9': "R", '10': 'S', '11': 'X'}
 
 # Model output to actual result converter dictionary
-right_result_dict = {'0': 'A','1': 'B','2': 'C','3': 'E','4': "F",'5': "G", '6': "I",'7': "J",'8': "K",'9': "L",'10': 'N','11': 'P','12': 'S','13': "U", '14': '0','15': '1','16': '2','17': '3','18': '4','19': '5','20': '6','21': '7', '22': '8','23': '9' }
+right_result_dict = {'0': 'A','1': 'B','2': 'C','3': 'E','4': "F",'5': "G", '6': "I",'7': "J",'8': "K",'9': "L",'10': 'N','11': 'P','12': 'S','13': "U", '14': '0','15': '1','16': '2','17': '3','18': '4','19': '5','20': '6','21': '7', '22': '8','23': '9', '24': 'V' }
 
 # Initializing the MediaPipe hand tracking model
 mp_drawing = mp.solutions.drawing_utils
@@ -45,7 +45,7 @@ class Classifier:
         self.__setDefaultHandConfiguration()
 
     # Setting the default hand configurations for the created instance
-        def __setDefaultHandConfiguration(self):
+    def __setDefaultHandConfiguration(self):
         self.__mpHandDetector = self.__mpHands.Hands(
             # default = 2
             max_num_hands=2,
