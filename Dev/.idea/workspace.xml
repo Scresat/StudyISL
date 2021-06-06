@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1e31562-5859-428b-9fff-335fc16ed56d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/classifier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/classifierCommunicator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/communication.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/db_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/home.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/learn.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/learn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/css/Navigation-Clean.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/img/success.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/img/tick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/assets22/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/css/cards.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/jslib/webcam.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/jslib/webcam.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/B.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/E.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/F.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/G.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/I.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/J.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/K.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/L.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/O.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/P.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/Q.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/U.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/V.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/W.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/learnimage/Z.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/model/alphabetaLeft.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/model/alphabetaRight.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/model/modelLeft.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/static/model/modelRight.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/templates/learn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Linux/templates/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/Windows.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/dataSources/7b0709c0-2c5e-4cf0-b673-743fd291f105.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/classifier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/classifierCommunicator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/communication.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/db_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/home.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/learn.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/learn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/css/Navigation-Clean.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/img/success.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/img/tick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/assets22/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/css/cards.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/jslib/webcam.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/jslib/webcam.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/B.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/E.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/F.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/G.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/I.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/J.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/K.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/L.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/O.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/P.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/Q.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/U.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/W.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/learnimage/Z.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/model/alphabetaLeft.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/model/alphabetaRight.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/model/modelLeft.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/static/model/modelRight.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/templates/learn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flask/Windows/templates/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/Create Dataset.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/Test Model.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/Train Dataset.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/Visualize.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/converter.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/alphabetaLeft.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/alphabetaRight.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/A.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/B.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/C.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/D.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/E.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/F.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/G.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/H.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/I.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/J.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/K.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/L.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/M.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/N.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/O.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/P.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/Q.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/R.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/S.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/T.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/U.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/V.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/W.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/X.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/Y.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/ref/Z.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/dataset/test/alphabetaRight.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/graph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/model/alphabetaLeft.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/model/alphabetaRight.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/modelLeft.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/modelRight.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1tZ1s9M5tHHunKkkvxg13OZfLAz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Flask/Windows" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1e31562-5859-428b-9fff-335fc16ed56d" name="Default Changelist" comment="" />
+      <created>1622962003545</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622962003545</updated>
+      <workItem from="1622962006662" duration="58000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Learn {{ symbol }} {% endblock %}
+{% block stylesheets %}
+<meta name="title" content="Learn {{ symbol }}!">
+<meta name="og:title" content="Learn {{ symbol }}!">
+{% endblock %}
+
+{% block content %}
+<div style="margin: 20px;">
+    <div id="first-div">
+        <div id="heading-div" style="border-radius: 10px;border-style: solid;margin: 39px;">
+            <h1 class="display-3" style="text-align: center;border-style: none;">{{ symbol }} in ISL</h1>
+        </div>
+        <div style="border-radius: 16px;border-style: none;padding: 10px;margin: 39px;">
+            <p style="text-align: center;font-size: 23px;">Take a look at the image on the right to learn how to perform
+                the sign!</p>
+            <p style="text-align: center;font-size: 23px;color: var(--primary);">Then click the button below to
+                practice! Wait till all ticks are turned green!</p>
+        </div>
+        <div style="margin: 39px;">
+            <button id="detect_btn" onclick="take_snapshot()" class="btn btn-primary" type="button" style="width: 100%;" disabled="true">Start detection!</button>
+        </div>
+    </div>
+    <div id="div-center" style="width: 66%;height: 500px;border-style: solid; background-color: white">
+        <div class="row">
+            <div class="col col-lg-6">
+                <img src="{{ url_for('static', filename='learnimage/'+learn_image) }}" alt=""
+                     style="width:240px;height:240px; margin-left: 20%; margin-top: 20px;">
+            </div>
+            <div class="col col-lg 6">
+                <div id="my_camera" style="margin-top: 20px">
+
+                </div>
+            </div>
+        </div>
+
+            <h1 id="detectionheader" style="margin-top: 35px; text-align: center">
+                Start Detection!
+            </h1>
+
+        <div class="row" id="tickrow">
+            <div class="col"><img id="tick1" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col"><img id="tick2" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col"><img id="tick3" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col"><img id="tick4" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col"><img id="tick5" class="tick" src="/static/assets22/img/tick.svg"></div>
+
+        </div>
+    </div>
+</div>
+<div style="height: 14%;width: 100%;position: fixed;bottom: 0;margin-left: 20px;margin-right: 20px;">
+    <div style="width: 20%;display: inline-block;">
+        <a href="{{ url_for('learn', symbol=previous) }}">
+            <button class="btn btn-dark" id="btn_prev" type="submit"
+        style="margin-left: 39px;float: left;margin-top: 20px;width: 120px;"><i class="fa fa-arrow-left"></i>&nbsp;
+    &nbsp;Previous
+        </button>
+        </a>
+
+
+
+    </div>
+    <div style="width: 58%;display: inline-block;">
+        <h1 id="detectionfooter" class="success" style="text-align: center;"></h1>
+
+    </div>
+    <div style="width: 20%;display: inline-block;">
+
+
+            <a href="{{ url_for('learn', symbol=next) }}">
+                <button class="btn btn-dark" id="next_btn" type="submit"
+        style="margin-right: 39px;float: right;margin-top: 20px;width: 120px;" >Next&nbsp; &nbsp; &nbsp;<i
+        class="fa fa-arrow-right"></i></button>
+            </a>
+
+
+
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="/static/jslib/webcam.js"></script>
+<script language="JavaScript">
+    Webcam.set('flip_horiz', true);
+    Webcam.attach('#my_camera');
+    var s;
+    var i = 0;
+
+    function snap_and_send() {
+        if (document.getElementById("detect_btn").innerHTML !== "Correct!") {
+            Webcam.snap(function (data_uri) {
+                // snap complete, image data is in 'data_uri'
+
+                Webcam.upload(data_uri, '{{ url_for('detection') }}', function (code, text) {
+                    let obj = JSON.parse(text);
+                    if (document.getElementById("detect_btn").innerHTML !== "Detect!") {
+                        if (obj.name === 'No sign detected'){
+                            document.getElementById("detectionheader").innerHTML = '{{ symbol }} not detected 😭';
+                        } else if (obj.name === '{{ symbol }}') {
+                            document.getElementById("detectionheader").innerHTML = '{{ symbol }} detected! 😇'
+                        } else {
+                            document.getElementById("detectionheader").innerHTML = '{{ symbol }} not detected (We saw ' + obj.name + ')😭';
+                        }
+
+                    }
+
+                    if (obj.name === '{{ symbol }}') {
+                        i++;
+                    }
+                    if (i === 1) {
+                        document.getElementById("tick1").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (i === 2) {
+                        document.getElementById("tick2").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (i === 3) {
+                        document.getElementById("tick3").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (i === 4) {
+                        document.getElementById("tick4").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (i === 5) {
+                        document.getElementById("tick5").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                        document.getElementById('detect_btn').innerHTML = 'Correct!'
+                        clearInterval(s);
+                        document.getElementById('detect_btn').classList.remove('btn-danger');
+                        document.getElementById('detect_btn').classList.add('btn-success');
+                        document.getElementById("detectionfooter").innerHTML = "🥳 Awesome, you learned {{ symbol }} in ISL! 🥳";
+                        setTimeout(function(){
+                            document.getElementById("detectionheader").innerHTML = "Done!"
+                        }, 550);
+
+
+                        document.getElementById('detect_btn').disabled = true
+                        document.getElementById('next_btn').classList.remove('btn-info');
+                        document.getElementById('next_btn').classList.add('btn-success');
+                    }
+                });
+            });
+        }
+    }
+
+
+    function take_snapshot() {
+        console.log("Clicked");
+        if (document.getElementById('detect_btn').innerHTML === 'Start detection!') {
+            console.log("Inner");
+            document.getElementById('detect_btn').innerHTML = 'Please wait';
+            document.getElementById('detect_btn').disabled = true;
+            Webcam.snap(function (data_uri) {
+                // snap complete, image data is in 'data_uri'
+
+                Webcam.upload(data_uri, '{{ url_for('detection') }}', function (code, text) {
+                    let obj = JSON.parse(text);
+                    document.getElementById('detect_btn').disabled = false;
+                    document.getElementById('detect_btn').innerHTML = 'Detecting... Click to stop!';
+                    document.getElementById('detect_btn').classList.add('btn-danger');
+                    document.getElementById('detect_btn').classList.remove('btn-primary');
+
+                    s = setInterval(function () {
+                        snap_and_send()
+                    }, 500);
+                });
+            });
+        } else if (document.getElementById('detect_btn').innerHTML === 'Detecting... Click to stop!') {
+            document.getElementById('detect_btn').innerHTML = 'Detect!';
+            clearInterval(s);
+            console.log("In else condition")
+            document.getElementById('detect_btn').classList.remove('btn-danger');
+            document.getElementById('detect_btn').classList.add('btn-primary');
+            document.getElementById("detectionheader").innerHTML = "Detection stopped";
+        } else if (document.getElementById('detect_btn').innerHTML === 'Detect!') {
+            s = setInterval(function () {
+                document.getElementById('detect_btn').innerHTML = 'Detecting... Click to stop!';
+                document.getElementById('detect_btn').classList.add('btn-danger');
+                document.getElementById('detect_btn').classList.remove('btn-primary');
+                snap_and_send()
+            }, 500);
+        }
+    }
+
+
+    Webcam.on( 'live', function() {
+		document.getElementById('detect_btn').disabled = false
+	} );
+
+</script>
+{% endblock %}
