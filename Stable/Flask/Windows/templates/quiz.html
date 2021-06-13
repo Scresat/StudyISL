@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Learn {{ symbol }} {% endblock %}
+{% block stylesheets %}
+<meta name="title" content="Learn {{ symbol }}!">
+<meta name="og:title" content="Learn {{ symbol }}!">
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container p-5" style="background-color: white">
+    <div id="before_result">
+        <div class="row mt-4">
+            <div class="col-md-6 float-left">
+                <h1>Show sign for symbol: </h1>
+                <h2 id="what_symbol" style="font-size:70px"></h2>
+            </div>
+            <div class="col-md-6 float-right"><div id="my_camera"></div></div>
+        </div>
+        <div class="row mt-4">
+            <button id="detect_btn" onclick="take_snapshot()" class="btn btn-primary" type="button" style="width: 100%;" disabled="true">Start detection!</button>
+        </div>
+        <div class="row mt-4" id="tickrow">
+            <div class="col-md-1"></div>
+            <div class="col-md-2"><img id="tick1" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col-md-2"><img id="tick2" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col-md-2"><img id="tick3" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col-md-2"><img id="tick4" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col-md-2"><img id="tick5" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-12 mt-4">
+                <button class="btn btn-info float-left" style="width: 30%; margin-left: 35%;" onclick="next_click()" id="next_btn" disabled>Next</button>
+                <button class="btn btn-info float-left" onclick="result_click()" id="result_btn" style="width: 30%; margin-left: 35%; display: none">Show Result</button>
+            </div>
+            </div>
+        </div>
+        <div id="result_header"></div>
+    <div id="result_exp">
+        <h2 id="result1" style="text-align:center"></h2>
+        <h2 id="result2" style="text-align:center"></h2>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script src="/static/jslib/webcam.js"></script>
+<script language="JavaScript">
+    Webcam.set('flip_horiz', true);
+    Webcam.attach('#my_camera');
+    var s;
+    var i = 0;
+    quiz_list = {{ quiz_list |  tojson}};
+    console.log(quiz_list)
+    var cur_que_index = 0;
+    document.getElementById('what_symbol').innerHTML = quiz_list[cur_que_index];
+    var detected_list = []
+    var cur_tick_index = 0
+    for (zj = 0; zj<quiz_list.length; zj++)
+    { detected_list.push([]) }
+    function snap_and_send() {
+        if (document.getElementById("detect_btn").innerHTML !== "Correct!") {
+            Webcam.snap(function (data_uri) {
+                // snap complete, image data is in 'data_uri'
+
+                Webcam.upload(data_uri, '{{ url_for('detection') }}', function (code, text) {
+                    let obj = JSON.parse(text);
+                    if (document.getElementById("detect_btn").innerHTML !== "Detect!") {
+                        detected_list[cur_que_index].push(obj.name);
+                        cur_tick_index++;
+                        console.log(obj.name);
+                    }
+                    if (cur_tick_index === 1) {
+                        document.getElementById("tick1").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (cur_tick_index === 2) {
+                        document.getElementById("tick2").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (cur_tick_index === 3) {
+                        document.getElementById("tick3").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (cur_tick_index === 4) {
+                        document.getElementById("tick4").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                    }
+                    if (cur_tick_index === 5) {
+                        document.getElementById("tick5").src = "{{ url_for('static', filename='assets22/img/success.svg') }}";
+                        document.getElementById('detect_btn').innerHTML = 'All responses checked'
+                        clearInterval(s);
+                        document.getElementById('detect_btn').classList.remove('btn-danger');
+                        document.getElementById('detect_btn').classList.add('btn-success');
+
+
+                        document.getElementById('detect_btn').disabled = true
+                        {#document.getElementById('next_btn').classList.remove('btn-info');#}
+                        {#document.getElementById('next_btn').classList.add('btn-success');#}
+                        console.log(detected_list)
+                        document.getElementById('next_btn').disabled = false;
+                        if (cur_que_index === quiz_list.length - 1) {
+                            document.getElementById('next_btn').remove();
+                            document.getElementById('result_btn').style.display = 'block';
+                        }
+                    }
+                });
+            });
+        }
+    }
+
+
+    function take_snapshot() {
+        console.log("Clicked");
+        if (document.getElementById('detect_btn').innerHTML === 'Start detection!') {
+            console.log("Inner");
+            document.getElementById('detect_btn').innerHTML = 'Please wait';
+            document.getElementById('detect_btn').disabled = true;
+            Webcam.snap(function (data_uri) {
+                // snap complete, image data is in 'data_uri'
+
+                Webcam.upload(data_uri, '{{ url_for('detection') }}', function (code, text) {
+                    let obj = JSON.parse(text);
+                    document.getElementById('detect_btn').disabled = false;
+                    document.getElementById('detect_btn').innerHTML = 'Detecting... Click to stop!';
+                    document.getElementById('detect_btn').classList.add('btn-danger');
+                    document.getElementById('detect_btn').classList.remove('btn-primary');
+
+                    s = setInterval(function () {
+                        snap_and_send()
+                    }, 1000);
+                });
+            });
+        } else if (document.getElementById('detect_btn').innerHTML === 'Detecting... Click to stop!') {
+            document.getElementById('detect_btn').innerHTML = 'Detect!';
+            clearInterval(s);
+            console.log("In else condition")
+            document.getElementById('detect_btn').classList.remove('btn-danger');
+            document.getElementById('detect_btn').classList.add('btn-primary');
+            document.getElementById("detectionheader").innerHTML = "Detection stopped";
+        } else if (document.getElementById('detect_btn').innerHTML === 'Detect!') {
+            s = setInterval(function () {
+                document.getElementById('detect_btn').innerHTML = 'Detecting... Click to stop!';
+                document.getElementById('detect_btn').classList.add('btn-danger');
+                document.getElementById('detect_btn').classList.remove('btn-primary');
+                snap_and_send();
+            }, 1000);
+        }
+    }
+
+    function next_click() {
+        document.getElementById('next_btn').disabled = true;
+        cur_que_index++;
+        cur_tick_index = 0;
+        console.log(cur_que_index)
+        if (cur_que_index === quiz_list.length - 1) {
+            document.getElementById('next_btn').style.display = 'none';
+        }
+        document.getElementById("detect_btn").innerHTML = "Start detection!";
+        document.getElementById('detect_btn').classList.remove('btn-success');
+        document.getElementById('detect_btn').classList.add('btn-primary')
+        document.getElementById("detect_btn").disabled = false;
+        document.getElementById('what_symbol').innerHTML = quiz_list[cur_que_index];
+        document.getElementById("tick1").src = "{{ url_for('static', filename='assets22/img/tick.svg') }}";
+        document.getElementById("tick2").src = "{{ url_for('static', filename='assets22/img/tick.svg') }}";
+        document.getElementById("tick3").src = "{{ url_for('static', filename='assets22/img/tick.svg') }}";
+        document.getElementById("tick4").src = "{{ url_for('static', filename='assets22/img/tick.svg') }}";
+        document.getElementById("tick5").src = "{{ url_for('static', filename='assets22/img/tick.svg') }}";
+    }
+
+    function result_click() {
+        document.getElementById("before_result").remove();
+        var marks = 0;
+        correct_list = []
+        incorrect_list = []
+        for (let cur_ = 0; cur_ < quiz_list.length; cur_++) {
+            found = false;
+            for (let cur2 = 0; cur2 < 5; cur2++) {
+                if (detected_list[cur_][cur2] === quiz_list[cur_]) {
+                    marks++;
+                    correct_list.push(quiz_list[cur_]);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                incorrect_list.push(quiz_list[cur_])
+            }
+        }
+
+        console.log(marks);
+
+        document.getElementById('result_header').innerHTML = `<h2 style="text-align:center;"> You scored ` + marks + ` / ` + quiz_list.length;
+        resultexp1 = "";
+        resultexp2 = "";
+        if (correct_list.length !== 0) {
+            resultexp1 += "You were correct about: ";
+        }
+        if (correct_list.length !== 0) {
+            for (let cur = 0; cur < correct_list.length; cur++)
+                resultexp1 += correct_list[cur] + " ";
+        }
+        if (incorrect_list.length !== 0) {
+            resultexp2 += "You were incorrect about: ";
+        }
+        if (incorrect_list.length !== 0) {
+            for (let cur = 0; cur < incorrect_list.length; cur++)
+                resultexp2 += `<a href="learn/` + incorrect_list[cur] + `" target="_blank" style="color:red">` + incorrect_list[cur] + `</a>&nbsp;`;
+        }
+        document.getElementById('result1').innerHTML = resultexp1;
+        document.getElementById('result2').innerHTML = resultexp2;
+
+    }
+    Webcam.on( 'live', function() {
+		document.getElementById('detect_btn').disabled = false
+	} );
+
+</script>
+{% endblock %}
