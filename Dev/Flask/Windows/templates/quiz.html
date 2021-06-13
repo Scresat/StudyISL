@@ -8,26 +8,32 @@
 
 {% block content %}
 
-    <div class="container">
+
+    <div class="container p-5" style="background-color: white">
     <div id="before_result">
-        <div class="row">
-            <div class="col-md-2"><h2 id="what_symbol"></h2></div>
-            <div class="col-md-4"><div id="my_camera"></div></div>
+        <div class="row mt-4">
+            <div class="col-md-6 float-left">
+                <h1>Show sign for symbol: </h1>
+                <h2 id="what_symbol" style="font-size:70px"></h2>
+            </div>
+            <div class="col-md-6 float-right"><div id="my_camera"></div></div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <button id="detect_btn" onclick="take_snapshot()" class="btn btn-primary" type="button" style="width: 100%;" disabled="true">Start detection!</button>
         </div>
-        <div class="row" id="tickrow">
+        <div class="row mt-4" id="tickrow">
+            <div class="col-md-1"></div>
             <div class="col-md-2"><img id="tick1" class="tick" src="/static/assets22/img/tick.svg"></div>
             <div class="col-md-2"><img id="tick2" class="tick" src="/static/assets22/img/tick.svg"></div>
             <div class="col-md-2"><img id="tick3" class="tick" src="/static/assets22/img/tick.svg"></div>
             <div class="col-md-2"><img id="tick4" class="tick" src="/static/assets22/img/tick.svg"></div>
             <div class="col-md-2"><img id="tick5" class="tick" src="/static/assets22/img/tick.svg"></div>
+            <div class="col-md-1"></div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <button class="btn btn-primary float-left" onclick="next_click()" id="next_btn">Next</button>
-                <button class="btn btn-primary float-right" onclick="result_click()" id="result_btn">Show Result</button>
+        <div class="row mt-4">
+            <div class="col-lg-12 mt-4">
+                <button class="btn btn-info float-left" style="width: 30%; margin-left: 35%;" onclick="next_click()" id="next_btn" disabled>Next</button>
+                <button class="btn btn-info float-left" onclick="result_click()" id="result_btn" style="width: 30%; margin-left: 35%; display: none">Show Result</button>
             </div>
             </div>
         </div>
@@ -38,8 +44,6 @@
     </div>
     </div>
     </div>
-
-
 
 {% endblock %}
 
@@ -53,7 +57,7 @@
     quiz_list = {{ quiz_list |  tojson}};
     console.log(quiz_list)
     var cur_que_index = 0;
-    document.getElementById('what_symbol').innerHTML = quiz_list[cur_que_index]
+    document.getElementById('what_symbol').innerHTML = quiz_list[cur_que_index];
     var detected_list = []
     var cur_tick_index = 0
     for (zj = 0; zj<quiz_list.length; zj++)
@@ -94,6 +98,11 @@
                         {#document.getElementById('next_btn').classList.remove('btn-info');#}
                         {#document.getElementById('next_btn').classList.add('btn-success');#}
                         console.log(detected_list)
+                        document.getElementById('next_btn').disabled = false;
+                        if (cur_que_index === quiz_list.length - 1) {
+                            document.getElementById('next_btn').remove();
+                            document.getElementById('result_btn').style.display = 'block';
+                        }
                     }
                 });
             });
@@ -119,7 +128,7 @@
 
                     s = setInterval(function () {
                         snap_and_send()
-                    }, 500);
+                    }, 1000);
                 });
             });
         } else if (document.getElementById('detect_btn').innerHTML === 'Detecting... Click to stop!') {
@@ -135,17 +144,17 @@
                 document.getElementById('detect_btn').classList.add('btn-danger');
                 document.getElementById('detect_btn').classList.remove('btn-primary');
                 snap_and_send();
-            }, 500);
+            }, 1000);
         }
     }
 
     function next_click() {
+        document.getElementById('next_btn').disabled = true;
         cur_que_index++;
         cur_tick_index = 0;
         console.log(cur_que_index)
         if (cur_que_index === quiz_list.length - 1) {
-            document.getElementById('next_btn').disabled = true;
-            document.getElementById
+            document.getElementById('next_btn').style.display = 'none';
         }
         document.getElementById("detect_btn").innerHTML = "Start detection!";
         document.getElementById('detect_btn').classList.remove('btn-success');
@@ -181,22 +190,22 @@
 
         console.log(marks);
 
-        document.getElementById('result_header').innerHTML = `<h2 style="text-align:center;"> Your marks are ` + marks
+        document.getElementById('result_header').innerHTML = `<h2 style="text-align:center;"> You scored ` + marks + ` / ` + quiz_list.length;
         resultexp1 = "";
         resultexp2 = "";
-        if (correct_list !== []) {
+        if (correct_list.length !== 0) {
             resultexp1 += "You were correct about: ";
         }
-        if (correct_list !== []) {
+        if (correct_list.length !== 0) {
             for (let cur = 0; cur < correct_list.length; cur++)
                 resultexp1 += correct_list[cur] + " ";
         }
-        if (incorrect_list !== []) {
+        if (incorrect_list.length !== 0) {
             resultexp2 += "You were incorrect about: ";
         }
-        if (incorrect_list !== []) {
+        if (incorrect_list.length !== 0) {
             for (let cur = 0; cur < incorrect_list.length; cur++)
-                resultexp2 += incorrect_list[cur] + " ";
+                resultexp2 += `<a href="learn/` + incorrect_list[cur] + `" target="_blank" style="color:red">` + incorrect_list[cur] + `</a>&nbsp;`;
         }
         document.getElementById('result1').innerHTML = resultexp1;
         document.getElementById('result2').innerHTML = resultexp2;
