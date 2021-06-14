@@ -205,7 +205,7 @@
         }
         if (incorrect_list.length !== 0) {
             for (let cur = 0; cur < incorrect_list.length; cur++)
-                resultexp2 += `<a href="learn/` + incorrect_list[cur] + `" target="_blank" style="color:red">` + incorrect_list[cur] + `</a>&nbsp;`;
+                resultexp2 += `<a href="/learn/` + incorrect_list[cur] + `" target="_blank" style="color:red">` + incorrect_list[cur] + `</a>&nbsp;`;
         }
         document.getElementById('result1').innerHTML = resultexp1;
         document.getElementById('result2').innerHTML = resultexp2;
