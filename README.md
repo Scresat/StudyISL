@@ -1,6 +1,4 @@
-# Flask-Model-v2
-
-StudyISL - Learn Indian Sign Language with AI!
+## StudyISL - Learn Indian Sign Language with AI!
 
 Technologies used
 - Python
